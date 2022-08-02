@@ -1,1 +1,5 @@
 just a small text file
+succeedded with uplading with git command push 
+git push worked 
+git push origin master or main didn't work
+
