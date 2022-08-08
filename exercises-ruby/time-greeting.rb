@@ -1,3 +1,5 @@
+#'tells the greeting after checking the local time'
+
 require 'time'
 time = (Time.now.to_s)[11,2].to_i
 greeting = ''
