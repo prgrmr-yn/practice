@@ -1,1 +1,1 @@
-Here i"ll be pushing all my js codes in
+Here i"ll be pushing all my javaScript codes in
