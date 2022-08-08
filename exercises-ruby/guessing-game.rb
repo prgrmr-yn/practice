@@ -1,3 +1,5 @@
+#guess using while loop
+
 secret_word = 'javascript'
 guess = ''
 guess_count = 0
