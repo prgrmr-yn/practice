@@ -6,7 +6,7 @@
 ## Case change
 # String.upcase
 name = 'yatin'
-name.upcase() # (non-desructive)=> yatin, (!) modifies if want to => YATIN.
+name.upcase # (non-desructive)=> yatin, (!) modifies if want to => YATIN.
 =begin
 'Michael'.upcase => "MICHAEL"
 'michAEL'.upcase => "MICHAEL"
@@ -14,7 +14,7 @@ name.upcase() # (non-desructive)=> yatin, (!) modifies if want to => YATIN.
 
 # String.downcase()
 name = 'YATIN'
-name.downcase() # (non-destructive)=> YATIN, (!) modifies if want to => yatin.
+name.downcase # (non-destructive)=> YATIN, (!) modifies if want to => yatin.
 =begin
 'MICHael'.downcase => "michael"
 'micHAel'.downcase => "michael"
@@ -22,7 +22,7 @@ name.downcase() # (non-destructive)=> YATIN, (!) modifies if want to => yatin.
 
 # String.swapcase()
 name = 'YatIn'
-name.swapcase() # (non-destructive)=> YatIn, (!) modifies if want to => yATiN.
+name.swapcase # (non-destructive)=> YatIn, (!) modifies if want to => yATiN.
 =begin
 'dwIgHt'.swapcase => "DWiGhT"
 'DWIGHT'.swapcase => "dwight"
@@ -31,7 +31,7 @@ name.swapcase() # (non-destructive)=> YatIn, (!) modifies if want to => yATiN.
 
 # String.capitalize()
 name = 'yatin'
-name.capitalize() # (non-destructive)=> yatin, (!) modifies if want to => Yatin.
+name.capitalize # (non-destructive)=> yatin, (!) modifies if want to => Yatin.
 =begin
 'JiM'.capitalize => "Jim"
 'JIM'.capitalize => "Jim"
@@ -127,7 +127,7 @@ str1[0, str1.length] = str2 # returns Melbourne, str1 is modified at the index a
 
 # Str.chop()
 manager = 'Michael Scott'
-manager.chop() #(non-desructive)=> Michael Scott, (!) modifies if want to => Michael Scot(chops the last letter).
+manager.chop #(non-desructive)=> Michael Scott, (!) modifies if want to => Michael Scot(chops the last letter).
 =begin
 'hello'.chop => "hell"
 'helll'.chop + 'o' => "hello"
@@ -144,7 +144,7 @@ str1.insert(0, str2) # returns "MelbourneHello" as insert method doesnot replace
 
 # Str.succ()
 letters = 'helo'
-letters.succ() # (non-desructive)=> helo, (!) modifies if want to => help(increments the last letter of the string).
+letters.succ # (non-desructive)=> helo, (!) modifies if want to => help(increments the last letter of the string).
 =begin
 'a'.succ => "b"
 'b'.succ => "c"
@@ -154,7 +154,7 @@ letters.succ() # (non-desructive)=> helo, (!) modifies if want to => help(increm
 
 # Str.reverse()
 manager = 'leahciM'
-manager.reverse() # (non-desructive)=> 'leahciM', (!) modifies if want to => "Michael" (reverse the letters in the string).
+manager.reverse # (non-desructive)=> 'leahciM', (!) modifies if want to => "Michael" (reverse the letters in the string).
 =begin
 'reverse'.reverse => "esrever"
 'esrever'.reverse => "reversè"
@@ -197,7 +197,7 @@ greeting[1...3] # returns 'el' (non-destructive)(exclusive range).
 
 # Str.chars()
 alphabet = 'abc'
-alphabet.chars() # returns ["a", "b", "c"] as array, (non-destructive) might use to_a instead as "a b c" will return ["a", " ", "b", " ", "c"] as thers spaces too.
+alphabet.chars # returns ["a", "b", "c"] as array, (non-destructive) might use to_a instead as "a b c" will return ["a", " ", "b", " ", "c"] as thers spaces too.
 =begin
 'hello'.upcase.chars => ["H", "E", "L", "L", "O"]
 'hello'.chars.upcase =>error (because in the example above it was returning a string uppercase and applying chars method on a string which was returing an array but when we converts into an Array it doesn't work because upcase only work with String)
@@ -205,42 +205,82 @@ alphabet.chars() # returns ["a", "b", "c"] as array, (non-destructive) might use
 
 #Str.chr()
 alphabet = 'abc'
-alphabet.chr() # returns "a" (non-destructive) , return only one beginning character in the string.
+alphabet.chr # returns "a" (non-destructive) , return only one first character in the string.
+=begin
+'unsigned binary'.chr => 'u'
+'signed binary'.chr => 's'
+=end
 
 # Str.lines()
 two_lines = "this is the first line
 this is the second"
-two_lines.lines() # returns an array of two elements (non-destructive) ["this is the first line","this is the second"].
+p two_lines.lines # returns an array of two elements (non-destructive) ["this is the first line","this is the second"].
+=begin
+p "a
+b".lines => ["a\n","b"] array of two elements
+=end
 
 # Str.split(p1)
 manager = '"Michael Scott'
-manager.split() # returns an array of two elements (non-destructive) ["Michael", "Scott"], by default it look for space and divides there but we can add our own params like 'l' which returns ["Michae", " Scott"].
+manager.split # returns an array of two elements (non-destructive) ["Michael", "Scott"], by default it look for space, deletes space and divides from there but we can add our own params like 'l' which returns ["Michae", " Scott"].
+=begin
+'hello'.split =>["hello"]
+'hello world'.split => ["hello", "world"] =>
+'hello'.split('') => ["h", "e", "l", "l", "o"]
+=end
 
 # Str.center(length, patstr)
 binary = '010'
 min_bin_depth = binary.center(8, '0') # adds string padstring to the length we provide, returns "00010000"(non-destructive), cannot be modified only returns a copy
+=begin
+'i wanna be in the centre'.center(10,'-') => "i wanna be in the centre"
+'i wanna be in the centre'.center(30, '-') => "---i wanna be in the centre---"
+=end
 
 # Str.ljust(length, padstr)
 binary = '011'
 min_binary_depth = 8
 value = binary.ljust(min_binary_depth, '0') # checks the initial string length and if its length is less that the length mentioned in the params its adds on the right of the string we pass as an arguement(non-destructive and can't be modified)
+=begin
+'i wanna be on the left'.ljust(10,'-') => "i wanna be on the left"
+'i wanna be on the left'.ljust(30,'-') => "i wanna be on the left--------"
+=end
 
 # Str.rjust(length,padstr)
 binary = '011'
 min_binary_depth = 8
 value = binary.rjust(min_binary_depth, '0') # checks the initial string length and if its length is less that the length mentioned in the params its adds on the left of the string we pass as an arguement(non-destructive and can't be modified)
+=begin
+'i wanna be on the right'.rjust(10,'-') => "i wanna be on the right"
+'i wanna be on the right'.rjust(30,'-') => "--------i wanna be on the right"
+=end
 
 # Str.strip()
 manager = ' Michael '
 manager.strip # (non-desructive)=> " Michael ", (!) modifies if want to => "Michael". removes the whitespaces from both ends
+=begin
+'space '.strip => "space"
+'space'.strip => "space"(if no whitespace then it ignores)
+'space '.strip! => nil(be careful with this one,conditional will help here)
+=end
 
 # Str.lstrip()
 manager = ' Michael '
 manager.lstrip # (non-desructive)=> " Michael ", (!) modifies if want to => "Michael". removes the whitespaces from left
+=begin
+'manager'.lstrip => "manager"
+' manager '.lstrip => "manager "('only removes the spaces on the left)
+'manager'.lstrip! => nil(be careful with this one,conditional will help here)
+=end
 
 # Str.rstrip()
 manager = ' Michael '
 manager.rstrip # (non-desructive)=> " Michael ", (!) modifies if want to => "Michael". removes the whitespaces from right
+=begin
+'manager'.rstrip => "manager"
+' manager '.rstrip => " manager"('only removes the spaces on the right)
+'manager'.rstrip! => nil(be careful with this one,conditional will help here)
+=end
 
 # str comparison
 str1 = '1'
@@ -249,10 +289,16 @@ str2 = '2'
 # str2 <=> str1 # returns 1(integar) if the left string is true
 # str1 <=> str1 # returns 0(integar) if its equal
 #'1'left(1) <=> '-1'right(-1), 0 if equals
+=begin
+'1' <=> '1' => returns 0
+'1' <=> '0' => returns 1
+'0' <=> '1' => returns -1
+=end
 
 # Str.hash
 str = '1'
-str.hash # non-destructive, cant modify, returns a hash value of a string
+str.hash # non-destructive, doesn't modify, returns a Hash value of a string not Hash class
+
 
 # Str.hex
 str = '1'
