@@ -7,82 +7,165 @@
 # String.upcase
 name = 'yatin'
 name.upcase() # (non-desructive)=> yatin, (!) modifies if want to => YATIN.
+=begin
+'Michael'.upcase => "MICHAEL"
+'michAEL'.upcase => "MICHAEL"
+=end
 
 # String.downcase()
 name = 'YATIN'
 name.downcase() # (non-destructive)=> YATIN, (!) modifies if want to => yatin.
+=begin
+'MICHael'.downcase => "michael"
+'micHAel'.downcase => "michael"
+=end
 
 # String.swapcase()
 name = 'YatIn'
 name.swapcase() # (non-destructive)=> YatIn, (!) modifies if want to => yATiN.
+=begin
+'dwIgHt'.swapcase => "DWiGhT"
+'DWIGHT'.swapcase => "dwight"
+'dwight'.swapcase => "DWIGHT"
+=end
 
 # String.capitalize()
 name = 'yatin'
 name.capitalize() # (non-destructive)=> yatin, (!) modifies if want to => Yatin.
+=begin
+'JiM'.capitalize => "Jim"
+'JIM'.capitalize => "Jim"
+=end
 
 
 ## Search/replace
 # String.start_with?()
 name = 'Yatin Nagpal'
 name.start_with?('ya') # returns true here as the condition is met, false otherwise.
+=begin
+'Pam'.start_with?('P') => true
+'Pam'.start_with?('p') => false
+=end
 
 # String.end_with?()
 name = 'Yatin Nagpal'
 name.end_with?('Nagpal') # returns true here as the condition is met, false otherwise.
+=begin
+1-'Andy is in the sales team'.end_with?('sales team') => true
+2-'Jim is also in the sales team '.end_with('sales team') => false
+#2-its was false with Jim coz the sentense has space at the end but we can use the strip method to get rid of the space and it will be true
+=end
 
 # String.include?()
 name = 'Yatin Nagpal'
 name.include?('in') # returns true here as the condition is met, false otherwise.
+=begin
+1-'Andy is in the sales team'.include?('sales team') => true
+2-'Jim is also in the sales team '.include?('Sales team') => false
+#2-It was false in the second one coz it was uppercase, to return true we can use downcase method so all the letters will be compared as lowercase(String.downcase.include?('downcased string'))
+=end
 
 # String.index()
 name = 'Yatin Nagpal'
 name.index('a') # retuns index of first occurance from the left, in this case(1).
+=begin
+#complicated index use with sub and ternary operator
+dream_team =  'Michael, Jim, Dwight, Pam'
+found_val =  dream_team.index('Pam')
+updated_val =  found_val == nil ? dream_team : dream_team.sub(', Pam','')
+if the value is nil then it returns the dream team and it finds the index then it replaces with the other condition and replace
+=end
 
 # String.rindex()
 name = 'Yatin Nagpal'
 name.rindex('a') # retuns index of first occurance from the right, in this case(10).
+=begin
+"Michael Scott".rindex('c') => returns 9 as it finds the index value of first occurance in the right
+'1'.rindex('1') => 0# no matter if we use rindex or index method it will return 0
+=end
 
 # Str1 + Str2  ('hel' + 'lo' => hello)
 str1 = 'Hello '
 str2 = 'Melbourne'
 string = str1 + str2 # add value to variable string but doesnt modify str1 and str2(return Hello Melbourne).
+=begin
+'hello' + 'there' => "hellothere"
+'hello ' + 'there' => "hello there"
+'hello' + ' there' => "hello there"
+=end
 
 # Str1 << Str2  ('hel' << 'lo' =>hello).
 str1 = 'Hello '
 str2 = 'Melbourne'
 str1 << ' ' << str2 # Modify str1 at the end but str2 stays the same (returns 'Hello Melbourne').
+=begin
+'hello' << 'there' => "hellothere"
+'hello' << ' there' => 'hello there'
+'hello ' << 'there' => 'hello there'
+=end
 
 # Str1[index] = str2
 str1 = 'Hello'
 str2 = 'Melbourne'
 str1[0] = str2 # returns Melbourneello, str1 is modified at the index specified in the brackets, replaced index character with str2..
 str1[0] = str2 + ' H' # returns Melbourne Hello, str1 is modified at the index specified in the brackets but this time we added 'space and H'.
+=begin
+- greeting = 'hello'
+  greeting[0] = 'j'
+  greeting => returns "jello"
+=end
 
-# Str[start-index,length] = str2
+# Str[start_index,length] = str2
 str1 = 'Hello'
 str2 = 'Melbourne'
 str1[0, str1.length] = str2 # returns Melbourne, str1 is modified at the index and length specified, in this case Hello was replace by Melbourne.
+=begin
+- greeting = 'hello'
+  greeting[0,3] = 'je'
+  greeting => "jelo"
+=end
 
 # Str.chop()
 manager = 'Michael Scott'
 manager.chop() #(non-desructive)=> Michael Scott, (!) modifies if want to => Michael Scot(chops the last letter).
+=begin
+'hello'.chop => "hell"
+'helll'.chop + 'o' => "hello"
+=end
 
 # Str.insert(index,'add').
 str1 = 'Hello'
 str2 = 'Melbourne'
 str1.insert(0, str2) # returns "MelbourneHello" as insert method doesnot replace the index character, it adds the parameter2 there(str2)(modifies the string).
+=begin
+- greeting = 'hello'
+  greeting.insert(greeting.length, ' melbourne') => "hello.melbourne"
+=end
 
 # Str.succ()
 letters = 'helo'
 letters.succ() # (non-desructive)=> helo, (!) modifies if want to => help(increments the last letter of the string).
+=begin
+'a'.succ => "b"
+'b'.succ => "c"
+'aa'.succ => "ab"
+'ba'.succ => "bb"
+=end
 
 # Str.reverse()
 manager = 'leahciM'
 manager.reverse() # (non-desructive)=> 'leahciM', (!) modifies if want to => "Michael" (reverse the letters in the string).
+=begin
+'reverse'.reverse => "esrever"
+'esrever'.reverse => "reversè"
+=end
 
 #Str.prepend('add')
 manager = 'Scott'
 manager.prepend('Michael ') # returns "Michael Scott", modifies the string and add parareter('Michael ') at the starting so does the name suggest prepend.
+=begin
+'melbournians'
+=end
 
 # Str * integar
 greeting = 'Hello '
@@ -195,8 +278,12 @@ greeting.scan(/[a-zA-Z]/) # returns an array of the matched regez chars(non-dest
 
 # Str[index]
 greeting = 'Hello'
-p greeting[1] # returns index of the string(copy)(non-destructive)
+greeting[1] # returns index of the string(copy)(non-destructive)
 
 # Str.ascii_only
 greeting = 'Hello'
 greeting.ascii_only?()  # return Boolean if all letters are ascii
+
+# str.count(str2)
+greeting = 'Hello'
+greeting.count('l') # returns integar of numbers of occurance happened in a string
