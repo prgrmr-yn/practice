@@ -164,25 +164,44 @@ manager.reverse() # (non-desructive)=> 'leahciM', (!) modifies if want to => "Mi
 manager = 'Scott'
 manager.prepend('Michael ') # returns "Michael Scott", modifies the string and add parareter('Michael ') at the starting so does the name suggest prepend.
 =begin
-'melbournians'
+'melbournians'.prepend('hello ').capitalize => "Hello mellbournians"
+'hello'.prepend('melbourne ').upcase => "MELBOURNE HELLO"
 =end
 
 # Str * integar
 greeting = 'Hello '
 greeting * 3 # returns "Hello Hello Hello ", gives a copy of the string (non-destructive).
+=begin
+'ha '* 3 #=>"ha ha ha "
+'ha '.strip * 3 #=>"hahaha"
+('ha ' * 3).strip => "ha ha ha"
+('ha ' * 3).strip.upcase => "Ha Ha Ha"
+=end
 
-# Str[index,length]
+# Str[index,length of how many letters we want]
 greeting = 'Hello '
 greeting[0, 5] # returns "Hello", gives a copy of the string(non-destructive), in this case we asked it to gives use from index 0 to length 5 which removes the space at the end.
+=begin
+'melbourne'[0, 3] => mel
+'melbourne'[0, 3].capitalize => Mel
+=end
 
-# Str [range]
+# Str [index...length],[index..index]
 greeting = 'Hello'
 greeting[1..3] # returns 'ell' (non-destructive)(inclusive range).
 greeting[1...3] # returns 'el' (non-destructive)(exclusive range).
+=begin
+'helloooo'[2...5] => "llo"
+'helloo'[2..5] => "lloo"
+=end
 
 # Str.chars()
 alphabet = 'abc'
 alphabet.chars() # returns ["a", "b", "c"] as array, (non-destructive) might use to_a instead as "a b c" will return ["a", " ", "b", " ", "c"] as thers spaces too.
+=begin
+'hello'.upcase.chars => ["H", "E", "L", "L", "O"]
+'hello'.chars.upcase =>error (because in the example above it was returning a string uppercase and applying chars method on a string which was returing an array but when we converts into an Array it doesn't work because upcase only work with String)
+=end
 
 #Str.chr()
 alphabet = 'abc'
