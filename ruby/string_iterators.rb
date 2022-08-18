@@ -7,7 +7,7 @@ end
 
 # each_char_with_index
 str.each_char.with_index do |char, ind|
-  "#{ind}-#{char}"  if %w(a e i o u).include?(char.downcase)
+  "#{ind}-#{char}"  if %w[a e i o u].include?(char.downcase)
 end
 
 # each_char.with_index(custom starting index)
@@ -20,5 +20,3 @@ str1 = 'abABCDभारत'
 str1.each_byte do |byte|
   byte
 end
-
-p 'abc aBcA'.count('a-c', 'b')

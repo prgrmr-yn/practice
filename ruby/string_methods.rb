@@ -214,7 +214,7 @@ alphabet.chr # returns "a" (non-destructive) , return only one first character i
 # Str.lines()
 two_lines = "this is the first line
 this is the second"
-p two_lines.lines # returns an array of two elements (non-destructive) ["this is the first line","this is the second"].
+two_lines.lines # returns an array of two elements (non-destructive) ["this is the first line","this is the second"].
 =begin
 p "a
 b".lines => ["a\n","b"] array of two elements
@@ -227,6 +227,8 @@ manager.split # returns an array of two elements (non-destructive) ["Michael", "
 'hello'.split =>["hello"]
 'hello world'.split => ["hello", "world"] =>
 'hello'.split('') => ["h", "e", "l", "l", "o"]
+sentence = 'Jan 1, Jan 2, Jan 3, Jan 4, Jan 5'
+sentence.split(',', 2) # returns ["Jan 1", " Jan 2, Jan 3, Jan 4, Jan 5"] as passed the second param for how many we elements we want in an array
 =end
 
 # Str.center(length, patstr)
@@ -262,6 +264,8 @@ manager.strip # (non-desructive)=> " Michael ", (!) modifies if want to => "Mich
 'space '.strip => "space"
 'space'.strip => "space"(if no whitespace then it ignores)
 'space '.strip! => nil(be careful with this one,conditional will help here)
+"hello world \n\t\v\r ".strip => returns "hello world" it removes newline, any space , verticaltab, or carriage return
+
 =end
 
 # Str.lstrip()
@@ -331,6 +335,10 @@ greeting.gsub('h', 'j') # returns jello as it replace the string on every occura
 greeting = 'hello'
 greeting.sub('e', 'a') # returns jello as it replace the string on first occurance
 # (non-desructive)=> hello, (!) modifies if want to => jello.
+=begin
+'organization'.gsub('z', 'z' => 's') # takes a hash
+'price of the phone is 1000 aud and cheap is 100'.gsub(/\d+/){ |d| "$#{d}"}
+=end
 
 # Str.replace(str)
 greeting = 'hello'
@@ -352,3 +360,29 @@ greeting.ascii_only?()  # return Boolean if all letters are ascii
 # str.count(str2)
 greeting = 'Hello'
 greeting.count('l') # returns integar of numbers of occurance happened in a string
+
+# string.count
+'aeiouUfeo'.downcase.count('aeiou') # checks the chars provided in the string and returns the number
+'aeiouUfeo'.downcase.count('^aeiou') # checks the chars not provided in the string and returns the number
+'^-12#abcdeUUU'.downcase.count('a-z', '^aeiou') # check only in the range provided in the first parameter
+
+# string.chomp
+'...hello world ...'.chomp # by default it looks for \n, \r, \r\n and chop it of the back
+'...hello world ...'.chomp('.') # if there u is a dot it will remove otherwise ignore
+
+
+# string.concat
+greeting = 'hello'
+greeting.concat(' world')
+greeting # returns "hello world", modifies the string
+
+# string.slice(index, length after the index)
+city = 'melbourne'
+city.slice(0, 3)
+city.slice(3, 4) # returns a copy of a string, (non-destructive)
+
+# string.empty
+em_str = ''
+em_str.empty? # true, returns Boolean if the string is empty or not
+em_str = 'not empty anymore'
+em_str.empty? # true, returns Boolean if the string is empty or not
