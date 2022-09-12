@@ -1,4 +1,5 @@
 require_relative 'task'
+ s
 class Controller
   def initialize(view,repository)
     @view = view

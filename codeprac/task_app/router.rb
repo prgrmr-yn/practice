@@ -17,7 +17,7 @@ class Router
       when 2 then @controller.list_task
       when 3 then @controller.mark_task_as_complete
       when 4 then break
-      else puts 'wrong input'
+      else puts  'wrong input'
       end
     end
   end
