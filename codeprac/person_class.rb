@@ -22,7 +22,6 @@ class Person < Human
   end
 
   def evolved
-    self
     'person evolved'
   end
 end
