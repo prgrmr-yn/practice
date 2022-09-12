@@ -33,7 +33,6 @@ class Box
   def self.full_boxes
     "packed boxes till this date is #{@@num_of_boxes} boxes"
   end
-
 end
 
 box = Box.new(20, 23)
