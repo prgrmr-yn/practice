@@ -10,6 +10,7 @@ name.upcase # (non-desructive)=> yatin, (!) modifies if want to => YATIN.
 =begin
 'Michael'.upcase => "MICHAEL"
 'michAEL'.upcase => "MICHAEL"
+'dwight'.upcase => "DWIGHT"F
 =end
 
 # String.downcase()
@@ -18,6 +19,7 @@ name.downcase # (non-destructive)=> YATIN, (!) modifies if want to => yatin.
 =begin
 'MICHael'.downcase => "michael"
 'micHAel'.downcase => "michael"
+'DWIGHT'.downcase => "dwight"
 =end
 
 # String.swapcase()
@@ -27,6 +29,7 @@ name.swapcase # (non-destructive)=> YatIn, (!) modifies if want to => yATiN.
 'dwIgHt'.swapcase => "DWiGhT"
 'DWIGHT'.swapcase => "dwight"
 'dwight'.swapcase => "DWIGHT"
+'michAEL'.swapcase => "michael"
 =end
 
 # String.capitalize()
@@ -35,6 +38,7 @@ name.capitalize # (non-destructive)=> yatin, (!) modifies if want to => Yatin.
 =begin
 'JiM'.capitalize => "Jim"
 'JIM'.capitalize => "Jim"
+'michaeL'.capitalize => "Michael"
 =end
 
 
@@ -45,6 +49,7 @@ name.start_with?('ya') # returns true here as the condition is met, false otherw
 =begin
 'Pam'.start_with?('P') => true
 'Pam'.start_with?('p') => false
+'michael'.start_with?('mich') => true
 =end
 
 # String.end_with?()
@@ -54,6 +59,7 @@ name.end_with?('Nagpal') # returns true here as the condition is met, false othe
 1-'Andy is in the sales team'.end_with?('sales team') => true
 2-'Jim is also in the sales team '.end_with('sales team') => false
 #2-its was false with Jim coz the sentense has space at the end but we can use the strip method to get rid of the space and it will be true
+3- 'i work for abc company'.end_with('abc company') => true
 =end
 
 # String.include?()
@@ -63,6 +69,7 @@ name.include?('in') # returns true here as the condition is met, false otherwise
 1-'Andy is in the sales team'.include?('sales team') => true
 2-'Jim is also in the sales team '.include?('Sales team') => false
 #2-It was false in the second one coz it was uppercase, to return true we can use downcase method so all the letters will be compared as lowercase(String.downcase.include?('downcased string'))
+3- 'pam is not in sales team'.include?('sales team) => if we wanna know who who is in the sales team or not, we can use if statements
 =end
 
 # String.index()
@@ -74,6 +81,7 @@ dream_team =  'Michael, Jim, Dwight, Pam'
 found_val =  dream_team.index('Pam')
 updated_val =  found_val == nil ? dream_team : dream_team.sub(', Pam','')
 if the value is nil then it returns the dream team and it finds the index then it replaces with the other condition and replace
+'hello there i am replaced by world'.index('there')
 =end
 
 # String.rindex()

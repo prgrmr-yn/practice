@@ -1,15 +1,15 @@
-#'tells the greeting after checking the local time'
+# 'tells the greeting after checking the local time'
 
 require 'time'
-time = (Time.now.to_s)[11,2].to_i
+time = (Time.now.to_s)[11, 2].to_i
 greeting = ''
 
 if time < 12
-  greeting = 'Good morning'
+  'Good morning'
 elsif time < 18
-  greeting = 'Good evening'
+  'Good evening'
 else
-  greeting = 'Good night'
+  'Good night'
 end
 
 puts greeting
