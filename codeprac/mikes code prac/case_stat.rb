@@ -11,4 +11,4 @@ def get_day_name(day)
   end
 end
 
-puts get_day_name 'thu'
+puts get_day_name ARGV[0]
