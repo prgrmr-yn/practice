@@ -8,5 +8,8 @@ class Book
 end
 
 book1 = Book.new('family guy', 'peter griffin', 200)
-p book1.page = 400
-p book1
+book1.pages = 400
+
+
+book = "#{book1.name} is written by #{book1.author} and has #{book1.pages} long"
+p book
