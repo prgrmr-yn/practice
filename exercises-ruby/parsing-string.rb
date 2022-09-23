@@ -14,7 +14,7 @@ def string_parser(string)
     str.match(/\d+/)[0].to_i
   end
 end
-p string_parser(str)
+string_parser(str)
 
 describe 'String Parser' do
   it 'can take  a string and output the correct values' do
