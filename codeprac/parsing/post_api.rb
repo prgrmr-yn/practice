@@ -1,25 +1,19 @@
-require 'open-uri'
-require 'net/http'
-require 'json'
+10.times do
 
-uri = URI.parse('https://discord.com/api/webhooks/1021205911844429924/ZIDoxA23G-RCjbzZrmBu6iClWfPuWtw2xDLpp7Q96iBRJ7tuwZ9ARn6tv-mdpS7V7HN7')
+  print`curl -H "Content-Type: application/json" -X POST -d '{"content":"hello"}' https://discord.com/api/webhooks/1021205911844429924/ZIDoxA23G-RCjbzZrmBu6iClWfPuWtw2xDLpp7Q96iBRJ7tuwZ9ARn6tv-mdpS7V7HN7`
+end
 
-header = { 'Content-Type': 'application/json' }
+# require 'uri'
+# require 'net/http'
+# require 'json'
 
-contents = {
-  content: 'null',
-  embeds: [
-    {
-      title: 'cloud',
-      description: 'buyor sell'
-    }
-  ]
-}
-p contents
+# uri = URI('https://discord.com/api/webhooks/1021205911844429924/ZIDoxA23G-RCjbzZrmBu6iClWfPuWtw2xDLpp7Q96iBRJ7tuwZ9ARn6tv-mdpS7V7HN7')
+# json = { 'content' => 'Hey ther mate' }
+# res = Net::HTTP.post_form(uri, json)
+# puts res.body  if res.is_a?(Net::HTTPSuccess)
 
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Post.new(uri.request_uri, header)
-request.body = contents.to_json
-p request
-response = http.request(request)
-p response
+
+# uri = URI('https://discord.com/api/webhooks/1021205911844429924/ZIDoxA23G-RCjbzZrmBu6iClWfPuWtw2xDLpp7Q96iBRJ7tuwZ9ARn6tv-mdpS7V7HN7')
+# json = { 'content' => 'Hey ther mate' }
+# res = Net::HTTP.post_form(uri, json)
+# puts res.body  if res.is_a?(Net::HTTPSuccess)
