@@ -1,0 +1,34 @@
+*{
+  font-family: arial;
+}
+/* Select multiple elements */
+p, button {
+  /* color: rgb(255, 0, 0); */
+}
+
+/* Selects all inside of the descendant*/
+#outer-div p {
+  color: red;
+}
+
+/* Select only the child tag*/
+#inner-div > p {
+  color: green;
+}
+
+/* select immideately after */
+h3 + p {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* select immideately after */
+h4 + p {
+  color: whitesmoke;
+  background: grey;
+}
+
+/* Select immideately before*/
+p ~ h4 {
+  color: orangered;
+}
