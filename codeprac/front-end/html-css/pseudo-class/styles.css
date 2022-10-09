@@ -21,3 +21,24 @@ a:active {
 a:visited {
   color: red;
 }
+
+/* checked */
+input[type="checkbox"]:checked {
+  outline: 2px solid rgb(243, 23, 111);
+}
+
+/* disable box */
+input[type="text"]:disabled {
+  color: black;
+  background-color: lightgrey;
+}
+
+/* focus on input */
+#cool:focus {
+  background: aqua;
+}
+
+/* nth child */
+p:nth-child(odd) {
+  color: green;
+}
