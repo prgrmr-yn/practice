@@ -1,0 +1,17 @@
+#paragraph::first-letter {
+  color: lightgreen;
+}
+
+#paragraph::first-line {
+  color: blue;
+}
+
+#paragraph::selection {
+  color: red;
+}
+.plus::before {
+  content: "___";
+}
+.plus::after {
+  content: "___";
+}
