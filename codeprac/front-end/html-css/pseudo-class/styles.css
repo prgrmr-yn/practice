@@ -1,0 +1,23 @@
+* {
+  font-family: Arial;
+}
+
+/* unvisited links */
+a:link {
+  text-decoration: none;
+}
+
+/* hovered link */
+a:hover {
+  color: orange;
+}
+
+/* active links */
+a:active {
+  color: lawngreen;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
