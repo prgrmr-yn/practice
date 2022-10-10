@@ -1,0 +1,51 @@
+.box, .tain{
+border: 1px solid green;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2px;
+}
+#static{
+  background-color: green;
+}
+
+#relative {
+  background: red;
+  position: relative;
+  left: 100px;
+}
+
+#absolute {
+  background: yellow;
+  position: absolute;
+  top: 172px;
+  left: 200px;
+}
+.con {
+  width: 300px;
+  height: 300px;
+  border: 2px solid blue;
+}
+
+#fixed {
+  position: fixed;
+  background-color: lightblue;
+  z-index: 2;
+  left: 400px;
+}
+
+#green {
+  color: green;
+  z-index: 1;
+  position: sticky;
+  top: 20px;
+}
+
+.con {
+  position: relative;
+  }
+
+.tain {
+  position: absolute;
+  background: blue;
+  top: 0;
+}
