@@ -3,7 +3,9 @@
 */
 
 const getFileExtention = (str) => {
-  return str.slice(str.lastIndexOf('.'))
+  const extention = str.slice(str.lastIndexOf('.'));
+  return `Its a ${extention.slice(1)} file`
 }
 
-console.log('index.html');
+console.log(getFileExtention('index.html'));
+console.log(getFileExtention('webpack.config.js'));
