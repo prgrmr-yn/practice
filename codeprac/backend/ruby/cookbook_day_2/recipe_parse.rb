@@ -22,6 +22,3 @@ class RecipeParse
     @prep_time = 16
   end
 end
-
-r = RecipeParse.new('strawberries')
-p r.call

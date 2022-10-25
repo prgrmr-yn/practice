@@ -1,0 +1,13 @@
+h1{
+  text-align: center;
+}
+
+div {
+  width: 400px;
+  height: 400px;
+  border: 1px solid grey;
+  margin: 50px auto;
+  background-color: yellowgreen;
+  background-image: url('https://images.unsplash.com/photo-1665418277591-0db44d63f468?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=1400&q=60');
+  background-size: cover;
+}

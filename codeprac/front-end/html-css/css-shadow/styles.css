@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+  font-size: 20px;
+  font-family: arial;
+  margin-top: 50px;
+}
+
+a{
+  background-color: grey;
+  border-radius: 3px;
+  padding: 12px 23px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 2px 2px 5px red;
+  box-shadow: 2px 2px 5px red;
+}
+a:hover {
+  text-shadow: -2px -2px 5px red;
+  box-shadow: -2px  -2px 5px red;
+}

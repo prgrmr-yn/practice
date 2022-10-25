@@ -11,4 +11,11 @@ class View
     puts anything
     gets.chomp
   end
+
+  def display_online_recipes(recipes, ratings)
+    recipes.each_with_index do |recipe, index|
+      puts "#{index + 1} - #{recipe} #{ratings[index]}/5"
+    end
+
+  end
 end

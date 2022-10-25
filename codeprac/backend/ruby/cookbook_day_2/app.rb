@@ -10,4 +10,4 @@ cookbook = Cookbook.new(csv_file)
 controller = Controller.new(cookbook)
 router = Router.new(controller)
 
-controller.import
+router.run

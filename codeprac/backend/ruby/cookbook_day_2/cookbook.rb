@@ -19,7 +19,7 @@ class Cookbook
   end
 
   def remove_recipe(recipe_index)
-    @recipes.delete_at(recipe_index)
+    @recipes.delete_at(recipe_index-1)
     update_csv
   end
 

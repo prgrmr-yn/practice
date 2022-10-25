@@ -34,6 +34,7 @@ class Controller
     description = recipe_parse.descriptions
     rating = recipe_parse.ratings
     prep_time = recipe_parse.prep_time
+    @view.display_online_recipes(recipe, rating)
     pick = @view.ask_for('which one you like to import?').to_i - 1
     @cookbook.add_recipe(Recipe.new(recipe[pick], description[pick], rating[pick], prep_time[pick]))
     @view.display_list(@cookbook.all)
