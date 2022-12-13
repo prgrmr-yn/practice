@@ -3,8 +3,8 @@
 
 const wish = (name)=> {
   return age =>{
-    console.log(`Happy birthday ${name}! You are ${age}, congrats`);
+    return `Happy birthday ${name}! You are ${age}, congrats`;
   }
 }
 const age = wish('Yatin')
-age(26)
+console.log(age(26));
