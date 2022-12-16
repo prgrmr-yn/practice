@@ -65,4 +65,4 @@ def full_name(first_name, last_name)
   "#{first_name.capitalize} #{last_name.capitalize}"
 end
 
-p full_name'Jess', 'silva'
+full_name'Jess', 'silva' # print
