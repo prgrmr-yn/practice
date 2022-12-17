@@ -355,7 +355,7 @@ greeting.replace('hallo') # destructive method returns "hel" (greeting is replac
 
 # Str.scan(regex)
 greeting = 'Hello'
-greeting.scan(/[a-zA-Z]/) # returns an array of the matched regez chars(non-destructive)
+greeting.scan(/[a-zA-Z]/) # returns an array of the matched regex chars(non-destructive)
 
 # Str[index]
 greeting = 'Hello'
