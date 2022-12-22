@@ -27,11 +27,34 @@ end
 # check if key is present
 paris.key? 'people'
 # check if value is present
-p paris.value? 'nice'
+paris.value? 'nice'
 # get all keys as array
 paris.keys
 # get all values as array
 paris.values
 
+cities = {
+  london: {
+    country: 'england',
+    monument: ['big ben', 'london bridge'],
+    self: 'london'
+  },
+  paris: {
+    country: 'france',
+    monument: ['eiffel tower', 'panthéon'],
+    self: 'paris'
+  }
+}
+cities[:london][:monument] # returns an array
+cities[:paris][:monument] # returns an array
 
-time = 35
+
+# Excercise HTML GENERATOR
+# tag('h1', 'Hello world')
+
+def tag(name, content, attr = {})
+  tag_list = attr.map { |key, val| " #{key}='#{val}'" }.join
+  p "<#{name}#{tag_list}>#{content}</#{name}>"
+end
+
+tag('h1', 'hello world', class: 'blue', href: 'www.google.com', id: 'html-gen')
