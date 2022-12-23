@@ -1,0 +1,15 @@
+{
+  "titles": "The Beatles",
+  "beatles": [
+    {
+      "first_name": "John",
+      "last_name": "Lenon",
+      "instrument": "Guitar"
+    },
+    {
+      "first_name": "Ringo",
+      "last_name": "Starr",
+      "instrument": "Drums"
+    }
+  ]
+}

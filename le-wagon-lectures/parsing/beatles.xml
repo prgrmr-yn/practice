@@ -1,0 +1,16 @@
+<? xml version= '1.0' encoding='UTF-8'?>
+<beatles>
+  <title>The Beatles</title>
+  <beatle>
+    <first_name>John</first_name>
+    <last_name>Lenon</last_name>
+    <instrument>guitar</instrument>
+  </beatle>
+  <beatle>
+    <first_name>Ringo</first_name>
+    <last_name>Smart</last_name>
+    <instrument>lead guitar</instrument>
+  </beatle>
+
+  </beatle>
+</beatles>
