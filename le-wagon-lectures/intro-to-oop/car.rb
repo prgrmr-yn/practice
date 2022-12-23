@@ -1,5 +1,6 @@
 class Car
-  attr_reader :color
+  attr_reader :brand, :model
+  attr_accessor :color
   def initialize(brand, model, color)
     @brand = brand
     @model = model
@@ -16,4 +17,6 @@ class Car
   end
 
 end
+
+# Allowing user to change the color if they paint but the model name and the brand cannot change
 
