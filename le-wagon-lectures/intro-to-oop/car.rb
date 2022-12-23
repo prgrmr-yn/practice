@@ -25,6 +25,3 @@ class Car
 end
 
 # Allowing user to change the color if they paint but the model name and the brand cannot change
-
-c= Car.new('a','a', 'a')
-p c.start_engine
