@@ -3,8 +3,8 @@ require_relative 'patient'
 require_relative 'room_repository'
 
 class PatientRepository
-
   attr_reader :patients
+
   def initialize(csv_file, room_repository)
     @csv_file = csv_file
     @patients = []
@@ -18,6 +18,7 @@ class PatientRepository
   end
 
   private
+
   def load_csv
     CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
       if row[:id]
@@ -30,17 +31,6 @@ class PatientRepository
 
       end
     end
-
   end
 end
 
-
-room_repo = RoomRepository.new('./rooms.csv')
-
-repo = PatientRepository.new('./patients.csv', room_repo)
-anne = Patient.new(name: 'anne')
-repo.add(anne)
-annee = Patient.new(name: 'annee')
-repo.add(annee)
-anneee = Patient.new(name: 'anneee')
-repo.add(anneee)
