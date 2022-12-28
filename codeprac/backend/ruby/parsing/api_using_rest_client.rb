@@ -8,3 +8,4 @@ repos = JSON.parse(response)
 # repos.each do |repo|
 #   Restaurant.create(name: repo['name'], rating: rand(1..5), address: repo['name'])
 # end
+
