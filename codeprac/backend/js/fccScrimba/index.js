@@ -98,3 +98,39 @@ remove1Points();
 remove1Points();
 
 myPoints // console.log();
+
+
+// BLACKJACK EXCERCISE
+
+function card() {
+  return Math.floor(Math.random()* 12)
+}
+
+let firstCard = card()
+let lastCard =  card()
+console.log(firstCard);
+console.log(lastCard);
+let sum = firstCard + lastCard
+let blackJack21 = false;
+let isAlive = true
+function blackjack(sum) {
+  if (sum < 21) {
+    console.log('Do you want to draw a new card');
+
+  } else if (sum === 21) {
+    blackJack21 = true
+    console.log('BLACKJACK');
+  }  else{
+    console.log('You are out of the game');
+    isAlive = false
+  }
+}
+blackjack(sum)
+sum += card()
+console.log(sum);
+blackjack(sum)
+
+if (blackJack21) {
+  console.log("Here's your money");
+
+}

@@ -53,3 +53,18 @@ function hide(params) {
 }
 
 
+let age = 21
+if (age < 21) {
+  ('Cant buy booze');
+}else {
+  ('Can buy booze');
+}
+
+age = 99
+if (age < 100) {
+  ('Not eligible yet');
+} else if (age === 100){
+  ("Here's your card, you earned it");
+} else {
+  ('You can never get a card again, but good job');
+}
