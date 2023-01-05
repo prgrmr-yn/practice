@@ -26,6 +26,7 @@ bonusPoints += 45;
 // show on html
 let count = 0;
 const incButton = document.getElementById('count-el');
+const saveEl = document.getElementById('save-el');
 
 function showCount() {
   incButton.innerText = count;
@@ -48,7 +49,8 @@ function decrement() {
 }
 
 function save() {
-  console.log(count);
+  saveEl.textContent += count + ' - '
+  resett()
 }
 
 
@@ -57,6 +59,7 @@ function save() {
 let username = 'per'
 let message = 'You have three notifications'
 let messageToUser = message + ',  ' +username + '!'
+
 
 
 //Excercise 4
@@ -75,4 +78,23 @@ incrementLap()
 
 lapsCompleted; // console.log();
 
+// Drag my number
 incButton.draggable = true
+
+let myPoints = 3;
+
+function add3Points() {
+  myPoints += 3
+}
+
+function remove1Points() {
+  myPoints--
+}
+
+add3Points();
+add3Points();
+add3Points();
+remove1Points();
+remove1Points();
+
+myPoints // console.log();
