@@ -8,13 +8,34 @@
   <title>People counter</title>
 </head>
 <body>
-  <h1>People entered: </h1>
-  <h2 id="count-el">0</h2>
-  <button id="increment-btn" onclick="increment()" >INCREMENT</button>
-  <button id="decrement-btn" onclick="decrement()">DECREMENT</button>
-  <button id="reset-btn" onclick="resett()">RESET</button>
-  <button id="save-btn" onclick="save()">SAVE</button>
-  <p id="save-el">Previous Entries: </p>
+  <div class="people-count">
+    <h1>People entered: </h1>
+    <h2 id="count-el">0</h2>
+    <button id="increment-btn" onclick="increment()" >INCREMENT</button>
+    <button id="decrement-btn" onclick="decrement()">DECREMENT</button>
+    <button id="reset-btn" onclick="resett()">RESET</button>
+    <button id="save-btn" onclick="save()">SAVE</button>
+    <p id="save-el">Previous Entries: </p>
+    <br><br><br><br><br><br>
+  </div>
+  ---------  ---------  ---------  ---------  ---------  ---------
+  <div class="blackjack">
+    <h1>Blackjack</h1>
+    <h3 id="card-title">Want to play a round?</h3>
+    <p id = "cards-el">Cards: </p>
+    <p id = "sum-el">Sum: </p>
+    <p id="message-el"></p>
+    <button id="initial-el" onclick="initialCards(sum)">Start Game</button>
+    <button id="another-card-el" onclick="anotherCard()">YES</button>
+    <button id="no-el" onclick="noMoreCard()">NO</button>
+    <button id="play-again-el" onclick="playAgain()">PLAY AGAIN</button>
+    <p id="player-el">Per: $145</p>
+    <br><br><br>
+    <button id="end-game-el" onclick="endGame()">EXIT GAME</button>
+  </div>
+  ---------  ---------  ---------  ---------  ---------  ---------
+  
+
   <script src="index.js"></script>
 </body>
 </html>

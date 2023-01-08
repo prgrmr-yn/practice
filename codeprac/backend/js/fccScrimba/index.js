@@ -62,75 +62,194 @@ let messageToUser = message + ',  ' +username + '!'
 
 
 
-//Excercise 4
+// Excercise 4
 // Lap count
+function lapCount(params) {
 
-let lapsCompleted = 0
-// Create a function that increments the lapsCompleted variable with one
-// Run it three times
 
-function incrementLap() {
-  lapsCompleted++
+  let lapsCompleted = 0
+  // Create a function that increments the lapsCompleted variable with one
+  // Run it three times
+
+  function incrementLap() {
+    lapsCompleted++
+  }
+
+  incrementLap()
+  incrementLap()
+
+  lapsCompleted; // console.log();
+
+  // Drag my number
+  incButton.draggable = true
+
+  let myPoints = 3;
+
+  function add3Points() {
+    myPoints += 3
+  }
+
+  function remove1Points() {
+    myPoints--
+  }
+
+  add3Points();
+  add3Points();
+  add3Points();
+  remove1Points();
+  remove1Points();
+
+  myPoints // console.log();
+
+
 }
 
-incrementLap()
-incrementLap()
-
-lapsCompleted; // console.log();
-
-// Drag my number
-incButton.draggable = true
-
-let myPoints = 3;
-
-function add3Points() {
-  myPoints += 3
-}
-
-function remove1Points() {
-  myPoints--
-}
-
-add3Points();
-add3Points();
-add3Points();
-remove1Points();
-remove1Points();
-
-myPoints // console.log();
-
-
+// Excercise 5
 // BLACKJACK EXCERCISE
 
-function card() {
-  return Math.floor(Math.random()* 12)
-}
+const cardTitle = document.getElementById('card-title');
+const cardsEl = document.getElementById('cards-el')
+const sumEl = document.getElementById('sum-el')
+const messageEl = document.getElementById('message-el')
+const initialEl = document.getElementById('initial-el')
+const endGameEl = document.getElementById('end-game-el')
+const anotherCardEl = document.getElementById('another-card-el')
+const noEl = document.getElementById('no-el')
+const playAgainEl = document.getElementById('play-again-el')
+const playerEl = document.getElementById('player-el')
 
-let firstCard = card()
-let lastCard =  card()
-console.log(firstCard);
-console.log(lastCard);
-let sum = firstCard + lastCard
-let blackJack21 = false;
-let isAlive = true
-function blackjack(sum) {
-  if (sum < 21) {
-    console.log('Do you want to draw a new card');
+let sum = 0;
+let cards = []
 
-  } else if (sum === 21) {
-    blackJack21 = true
-    console.log('BLACKJACK');
-  }  else{
-    console.log('You are out of the game');
-    isAlive = false
+const player = {
+  name: 'Yatin',
+  chips: 150,
+  hello() {
+    console.log('heisann');
   }
 }
-blackjack(sum)
-sum += card()
-console.log(sum);
-blackjack(sum)
+player.hello();
 
-if (blackJack21) {
-  console.log("Here's your money");
+playerEl.textContent = `${player.name}: $${player.chips}`
+
+// i wish stimulus controller was here hahhahaha
+function hideElement(...el) {
+  for (const e of el) {
+    e.style.display = 'none'
+  }
+}
+
+function showElement(el) {
+  el.style.display = 'inline-block'
+}
+
+hideElement(anotherCardEl, endGameEl, playAgainEl, noEl)
+
+function gameOver() {
+  cards = [];
+  sum = 0;
+  cardTitle.style.display = 'block'
+  hideElement(endGameEl, anotherCardEl, noEl)
+  showElement(playAgainEl)
 
 }
+
+function card() {
+  let random =  Math.floor(Math.random()* 13) + 1
+  console.log( random);
+  if (random === 1){
+    console.log(random);
+    return 11
+  }else if (random > 10){
+
+    return 10
+  }
+  return random
+}
+
+function initialCards(){
+  cards.push(card())
+  cards.push(card())
+  sum += cards[0] + cards[1]
+  hideElement(cardTitle)
+  hideElement(initialEl)
+  hideElement(playerEl)
+  showElement(endGameEl)
+  showElement(noEl)
+  renderGame(sum, cards[0], cards[1]);
+  anotherCardEl.style.display = 'inline-block'
+  messageEl.style.display = 'block'
+}
+
+function anotherCard(params) {
+  let oldSum = sum;
+  let newCard = card()
+  sum += newCard
+  cards.push(newCard)
+  renderGame(sum, oldSum, newCard)
+}
+
+function noMoreCard() {
+  hideElement(noEl)
+  gameOver()
+}
+
+function renderGame(sum, firstCard, secondCard) {
+  let blackJack21 = false;
+  let isAlive = true
+  let gameFinish = false
+  if (sum < 21) {
+    message = 'Do you want to draw a new card';
+
+  }else if (sum === 21) {
+    message = 'BLACKJACK, YOU WON!';
+    blackJack21 = true
+    gameFinish = true
+
+  }else{
+    message = 'You are out of the game';
+    isAlive = false
+    gameFinish = true
+  }
+  messageEl.textContent = message
+  sumEl.textContent = `Sum: ${sum}`
+
+  cardsContent = '';
+  for (const [i, card] of cards.entries()) {
+    if (i === cards.length - 1) {
+      cardsContent += `${card}`
+    }else {
+      cardsContent += `${card}----`
+    }
+  }
+  cardsEl.textContent = `Cards: ${cardsContent}`
+
+  if (blackJack21) {
+  console.log("Here's your money");
+  }
+  if (gameFinish) {
+    gameOver()
+    setTimeout(() => {
+      alert(`Gameover! ${message}`)
+    }, 500);
+  }
+}
+
+function endGame() {
+  sum = 0;
+  cards = []
+  hideElement(messageEl, endGameEl, anotherCardEl)
+  showElement(initialEl)
+  cardTitle.style.display = 'block'
+  cardsEl.textContent = 'Cards: '
+  sumEl.textContent = 'Sum: '
+
+}
+
+function playAgain() {
+  endGame()
+  hideElement(playAgainEl, noEl)
+}
+
+// Escercise 5
+//

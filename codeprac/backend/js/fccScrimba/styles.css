@@ -2,3 +2,32 @@ body {
   background-color: black;
   color: white;
 }
+.blackjack{
+  font-family: 'Trebuchet MS';
+  background-color: green;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  min-height: 250px;
+}
+.blackjack h1 {
+  color: gold;
+}
+
+.blackjack > button {
+  color: #015f32;
+  width: 158px;
+  background-color: gold;
+  padding: 0 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+}
+
+#message-el {
+  color: blue;
+}
+
+#card-title {
+
+}
