@@ -1,0 +1,9 @@
+input[type=text] {
+  min-width: 200px;
+  border: 2px solid green;
+}
+
+#user-btn {
+  background-image: linear-gradient(rgb(242, 131, 242), yellow);
+}
+
