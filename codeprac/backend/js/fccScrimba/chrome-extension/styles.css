@@ -1,9 +1,16 @@
 input[type=text] {
-  min-width: 200px;
+  min-width: 400px;
+  width: 500px;
   border: 2px solid green;
+  margin-bottom: 10px;
 }
 
-#user-btn {
-  background-image: linear-gradient(rgb(242, 131, 242), yellow);
+#user-btn,  #tab-btn {
+  background-image: linear-gradient(rgb(187, 240, 11), rgb(208, 243, 197));
 }
 
+
+#delete-btn {
+  background-color: rgb(235, 186, 186);
+  color: black;
+}
