@@ -1,0 +1,44 @@
+#box-el {
+  height: 40px;
+  width: 300px;
+  margin: 8px auto;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  background-color: red;
+  padding-top:  20px;
+}
+/*
+
+.apple  {
+}
+
+.orange {
+  background-color: orange;
+} */
+
+
+/* body {
+  margin: 0;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=text] {
+  width: 100%;
+  border: 2px solid lightgreen;
+  height: 20px;
+  margin-bottom: 4px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+#input-btn {
+  width: 12.5%;
+  background-color: lightgreen;
+  border: 1px solid lightgrey;
+} */
+
+.open {
+  background-color: greenyellow !important
+}
