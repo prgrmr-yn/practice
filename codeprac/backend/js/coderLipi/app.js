@@ -323,9 +323,33 @@ function classChapter() {
 
 }
 
-let hi = () => { l('howdy')}
-hi()
+function arrowChapter() {
+
+  let hi = () => { l('howdy')}
+  hi()
 
 
-let hello = name =>  `Hello ${name}`
-l(hello('dave'))
+  let hello = name =>  `Hello ${name}`
+  l(hello('dave'))
+
+
+  let names = ['david', 'edith', 'alex']
+  let i = 0
+
+  let newNames = names.map(name =>  {i++; return `${i}. ${name}`});
+  l(newNames)
+}
+
+let now = new Date();
+let birthday  = new Date('1969-12-07')
+
+
+
+l(birthday)
+console.log(now- birthday);
+
+
+setTimeout(() => {
+  let diff  = (new Date() - now)
+  console.log('Time elapsed: ' + Math.trunc(diff/1000) + ' seconds');
+}, 3000);
