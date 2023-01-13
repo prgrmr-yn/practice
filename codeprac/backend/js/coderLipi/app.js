@@ -1,4 +1,10 @@
-let l = console.log
+let l = console.log;
+
+function clickH(arg) {
+  console.log(arg);
+  // console.log(this.scrollBy(12));
+  console.log(this);
+}
 
 function firstChapter(params) {
   let y = false
@@ -340,16 +346,83 @@ function arrowChapter() {
   l(newNames)
 }
 
-let now = new Date();
-let birthday  = new Date('1969-12-07')
+function dateChapter() {
+
+  let now = new Date();
+  let birthday  = new Date('1969-12-07')
 
 
 
-l(birthday)
-console.log(now- birthday);
+  l(birthday)
+  console.log(now- birthday);
 
 
-setTimeout(() => {
-  let diff  = (new Date() - now)
-  console.log('Time elapsed: ' + Math.trunc(diff/1000) + ' seconds');
-}, 3000);
+  setTimeout(() => {
+    let diff  = (new Date() - now)
+    console.log('Time elapsed: ' + Math.trunc(diff/1000) + ' seconds');
+  }, 3000);
+
+}
+
+function errorChapter() {
+
+
+
+  try {
+    let a = 7 * undefined/ 'punana';
+    l(a)
+    if (Nam) {
+
+    }
+  } catch (e){
+    l('nah cant do that\n mate ' + e)
+  }finally{
+    l('finally')
+  }
+
+  function beforeTryCatch() {
+    let obj = undefined;
+    l(obj.b);
+    l('cant see me\'')
+  }
+  // beforeTryCatch()
+
+  function afterTryCatch() {
+    try {
+      let obj = undefined;
+      l(obj.b);
+      l('cant see me\'')
+    }catch(error) {
+      l('i Caurght an exception ' + error.message)
+    }finally{
+      l('This will happen, no matter what')
+    }
+    console.log('sup');
+  }
+
+  afterTryCatch()
+
+  function performCalculation(obj) {
+    if(!obj.hasOwnProperty('b')) {
+      throw new Error('Object is missing property')
+    }
+    return 5
+  }
+
+  function performHigherLeverOperation() {
+    let obj = {};
+    let value = 0;
+    try {
+      value = performCalculation(obj)
+    } catch(err) {
+      l(err.message)
+    }
+
+    if(value == 0) {
+
+    }
+  }
+
+  performHigherLeverOperation()
+
+}
