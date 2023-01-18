@@ -188,3 +188,15 @@ main {
   color: var(--clr-white);
   background: var(--clr-black);
 }
+
+.increment {
+  color: green ;
+}
+
+.decrement {
+  color: rgb(226, 39, 123) ;
+}
+
+.neutral {
+  color: grey;
+}
