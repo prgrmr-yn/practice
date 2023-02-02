@@ -1,0 +1,2 @@
+ls: /coolies: No such file or directory
+ls: /coolies: No such file or directory

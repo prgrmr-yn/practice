@@ -1,0 +1,6 @@
+error.txt
+list.txt
+setx.sh
+error.txt
+list.txt
+setx.sh
