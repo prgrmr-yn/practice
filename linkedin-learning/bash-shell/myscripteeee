@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "hello"
+
+# This is a comment
+
+echo "there"
+
