@@ -1,0 +1,8 @@
+import { xml2json } from 'xml-js';
+
+const xml = '<?xml version="1.0" encoding="UTF-8"?><web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5"> <display-name>Some Application</display-name> <!-- Spring --> <listener>     <listener-class>         org.springframework.web.context.ContextLoaderListener</listener-class> </listener> <context-param> <param-name>contextConfigLocation</param-name> <param-value> classpath:spring/context.xml </param-value> </context-param> <!-- Jersey -->  <servlet> <servlet-name>jersey-servlet</servlet-name> <servlet-class> com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class> <init-param> <param-name>com.sun.jersey.config.property.packages</param-name> <param-value>rest.package.name</param-value> </init-param> <init-param> <param-name>com.sun.jersey.config.property.JSPTemplatesBasePath</param-name> <param-value>/WEB-INF/jsp</param-value> </init-param> <load-on-startup>1</load-on-startup> </servlet> <servlet-mapping> <servlet-name>jersey-servlet</servlet-name> <url-pattern>/rest/*</url-pattern> </servlet-mapping> <!-- JSF --> <servlet> <servlet-name>Faces Servlet</servlet-name> <servlet-class>javax.faces.webapp.FacesServlet</servlet-class> </servlet> <servlet-mapping> <servlet-name>Faces Servlet</servlet-name> <url-pattern>*.jsf</url-pattern> </servlet-mapping><context-param> <param-name>javax.faces.PROJECT_STAGE</param-name> <param-value>Development</param-value> </context-param>< web-app>'
+
+
+
+const json = xml2json(xml, )
+console.log(json);
