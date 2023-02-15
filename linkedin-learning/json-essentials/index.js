@@ -32,4 +32,33 @@ function debunk(json) {
 const data = JSON.parse(debunk(powerbanks))
 console.log(powerbanks);
 console.log(data);
-console.log(JSON.stringify(data, null, 4));
+// console.log(JSON.stringify(data, null, 4));
+console.log(JSON.stringify(data));
+
+
+
+let productSchema = {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://hplussport.com/schema/products.json",
+  "title": "h+ sport products",
+  "description": "Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+      },
+      "name": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    },
+    "required": ["id", "name", "title", "description"]
+  }
+}
