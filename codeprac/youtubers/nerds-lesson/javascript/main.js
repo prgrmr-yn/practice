@@ -137,49 +137,89 @@ function chapThree() {
   let result = maxMinusOneInt(generateArrayOfRandomNums(5));
   const [total, min, max] = result;
   console.log(`${max} - ${min} = ${total} `);
-
 }
 
 function chapFour() {
-
-  let pEls = document.getElementsByTagName('p')
+  let pEls = document.getElementsByTagName("p");
 
   for (let el of pEls) {
-      el.style.color= 'green'
+    el.style.color = "green";
   }
 
-  let myClass = document.getElementsByClassName('plain-text');
-  myClass[1].style.color = 'red';
+  let myClass = document.getElementsByClassName("plain-text");
+  myClass[1].style.color = "red";
 
+  let selectedClass = document.querySelector("#special .someclass");
+  selectedClass.style.color = "blue";
 
-  let selectedClass = document.querySelector('#special .someclass')
-  selectedClass.style.color = 'blue'
-
-  let selectedClasses = document.querySelectorAll('.plain-text')
+  let selectedClasses = document.querySelectorAll(".plain-text");
   console.log(selectedClasses);
-  selectedClasses.forEach((el)=>{
+  selectedClasses.forEach((el) => {
     console.log(el.className);
-  })
+  });
 
-
-
-  let myDiv = document.querySelector('#special .someclass')
+  let myDiv = document.querySelector("#special .someclass");
   console.log(myDiv.innerHTML);
-  console.log(myDiv.className = 'blue');
+  console.log((myDiv.className = "blue"));
 
-  let checkBox = document.querySelector('#check')
-  checkBox.setAttribute('checked', 'checked')
+  let checkBox = document.querySelector("#check");
+  checkBox.setAttribute("checked", "checked");
   console.log(checkBox);
 
-
-  let pTag = document.createElement('p')
-  let pText = document.createTextNode('Here is a new paragraph')
-  pTag.appendChild(pText)
-  let myDivEl = document.querySelector('div');
+  let pTag = document.createElement("p");
+  let pText = document.createTextNode("Here is a new paragraph");
+  pTag.appendChild(pText);
+  let myDivEl = document.querySelector("div");
   console.log(myDivEl);
-  myDivEl.appendChild(pTag)
-  myDivEl.removeChild(myDiv.children[1])
-
+  myDivEl.appendChild(pTag);
+  myDivEl.removeChild(myDiv.children[1]);
 }
 
+function chapFive() {}
 
+let btn = document.querySelector("button");
+
+function ouch() {
+  alert("I told you not to press me!");
+}
+
+btn.addEventListener("click", (e) => {
+  console.log((e.target.style.color = "blue"));
+  if (e.altKey === true) {
+    alert("alt alert");
+  }
+});
+
+let link = document.querySelector("a");
+
+link.addEventListener("click", (e) => {
+  e.preventDefault();
+  alert('Can\'t take you to google sorry')
+});
+
+
+let myForm = document.querySelector('form');
+console.log(myForm);
+
+myForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let formData = document.querySelectorAll('label>input');
+  console.log(formData[0
+  ].length);
+  formData = '';
+})
+
+let heading = document.querySelector('#heading')
+let box = document.querySelector('#div')
+
+box.addEventListener('mouseover',()=>{
+  heading.innerHTML = 'The mouse is over the box!'
+})
+
+box.addEventListener('mouseout', ()=>{
+  heading.innerHTML = 'The mouse has left the boxes'
+})
+
+heading.addEventListener('mouseover', () => {
+  heading.innerHTML = 'Roll your mouse over the boxes'
+})
