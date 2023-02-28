@@ -1,5 +1,10 @@
-div {
+/* div {
   width: 50px;
-  height: 5000px;
+  height: 500px;
   background: red;
+} */
+
+img {
+  width: 200px;
+  height: 300px;
 }
