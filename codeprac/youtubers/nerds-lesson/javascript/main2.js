@@ -23,23 +23,30 @@ newVar = 'not properly defined';
 console.log(newVar);
 
 for (let i = 0; i<10; i++) {
-  console.log(i);
+  i
 }
 
-let myImages = ['../images/img1.PNG', '../images/img2.PNG', '../images/img3.jpg'];
+// Img slider
 
 let currentImage = 0;
-document.getElementById('next').onclick = nextPhoto;
+let myImages = ['img1.PNG', 'img2.PNG', 'img3.jpg'];
+
+document.getElementById('next').addEventListener('click', nextPhoto);
 document.getElementById('previous').onclick = previousPhoto;
 const imgEl = document.getElementById('myImage')
+const container = document.getElementById('content');
 
 
 function nextPhoto() {
+  imgEl.className = 'fadeinimg'
   currentImage++
   if (currentImage === myImages.length) {
     currentImage = 0
   }
-  imgEl.src = myImages[currentImage]
+  imgEl.src = `../images/${myImages[currentImage]}`
+  setTimeout(() => {
+    imgEl.classList.remove('fadeinimg')
+  }, 1000);
 }
 
 function previousPhoto() {

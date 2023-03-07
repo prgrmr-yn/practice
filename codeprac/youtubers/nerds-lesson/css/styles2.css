@@ -5,6 +5,34 @@
 } */
 
 img {
-  width: 200px;
-  height: 300px;
+  width: 150px;
+  height: 200px;
+}
+
+#content {
+  margin: 0px auto 0px auto;
+  border: 10px solid #4C4C4C;
+  width: 150px;
+  height: 200px;
+  position: relative;
+}
+
+#content img {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+.fadeinimg {
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
