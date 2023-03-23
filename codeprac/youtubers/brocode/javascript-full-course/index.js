@@ -166,4 +166,56 @@ function tempEx() {
       default:
         break;
     }
+
+
+  let temp = -14;
+
+  if (temp >= 0) {
+  console.log('Its cold');
+  }else if (temp < 0) {
+    console.log('Its freezing');
+  }
+
+
+  let username;
+
+  do {
+    userName = window.prompt('Enter your name')
+  }while (userName == '')
+
+  console.log('Hello ' + userName);
+
+  for (let i = 0; i < 30; i++) {
+    if (i === 12) break
+  }
+
+  let rows = window.prompt('Enter number of rows')
+  let columns = window.prompt('Enter number of columns');
+
 }
+
+function drawRectangle() {
+
+
+  document.querySelector('#draw-submit').onclick = () => {
+  let symbol = readVal('my-symbol');
+  let row = readVal('my-row');
+  let column = readVal('my-column');
+
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < column; j++) {
+      document.getElementById('draw-here').innerHTML += symbol;
+    }
+    document.getElementById('draw-here').innerHTML += `<br>`
+  }
+
+
+  }
+
+  function readVal(val) {
+    return document.getElementById(val).value
+  }
+
+}
+
+let userName = 
