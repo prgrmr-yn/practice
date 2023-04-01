@@ -1,3 +1,4 @@
+const l = console.log;
 // Nested Loop
 
 function drawTriange() {
@@ -603,38 +604,276 @@ function classObject(){
 
 };
 
+function classInDetail() {
 
-class Animal{
-  alive = true;
 
-  constructor(name){
-    this.name = name;
-  }
-  eat(){
-    return `This ${this.name} is eating`
-  }
-  sleep(){
-    return `This ${this.name} is sleeping`
+
+  class Animal{
+    alive = true;
+
+    constructor(name){
+      this.name = name;
+    }
+    eat(){
+      return `This ${this.name} is eating`
+    }
+    sleep(){
+      return `This ${this.name} is sleeping`
+    }
+
   }
 
+  class Rabbit extends Animal {
+
+    constructor (name,age){
+      super(name)
+      this._age = age
+      this._energy = 100
+    }
+
+    get age(){
+      return `${this._age} years old`
+    }
+    run(){
+      return `This ${this.name} is running and he is only ${this.age}`
+    }
+  }
+
+  const rabbit1 = new Rabbit('zoomba', '2');
+  console.log(rabbit1.run());
+  console.log(rabbit1);
+
+
+  class Car {
+    constructor(power){
+      this._gas = 25;
+      this._power = power;
+    }
+
+    get power(){
+      return `${this._power}hp`;
+    }
+
+    get gas(){
+      return `${this._gas}L (${this._gas / 50 * 100}%)`
+    }
+
+    set gas(value){
+      if (value > 50){
+        value = 50
+      } else if(value > 0){
+        value = 0
+      }else{
+
+      }
+      this._gas = value;
+    }
+  }
+
+  let car = new Car(400)
+  console.log(car.power);
+  console.log(car.gas);
+
+
+  class Carr {
+    constructor(model, year, colour){
+      this.model = model
+      this.year = year
+      this.colour = colour
+    }
+
+    drive(){
+      console.log(`You drive the ${this.colour} ${this.model}`);
+    }
+
+  }
+
+  function displayInfo(car){
+    console.log([car.model, car.year, car.colour]);
+  }
+
+  let carr1 = new Carr('mustang', 2021, 'red')
+  let carr2 = new Carr('mustang', 2021, 'green')
+
+  let carrs = [carr1, carr2]
+
+
+  class Card {
+    constructor(value, suit){
+      this.value = value;
+      this.suit = suit
+    }
+  }
+
+  let card1 = new Card('A', 'Hearts')
+  let card2 = new Card('A', 'Spaded')
+  let card3 = new Card('A', 'Diamonds')
+
+  let cards = [card1, card2, card3];
+
+  console.log();
+};
+
+function timeOutAndErrors() {
+
+
+
+  try {
+    let x = 2
+    // let x = window.prompt('Enter a #')
+    x = Number(x);
+
+    if (isNaN(x)) throw "That wasn't a number!"
+    if (x == '') throw 'That was empty'
+  }
+  catch(err){
+    console.error(err)
+  }
+  finally{
+    l('finally')
+  }
+
+
+  function firstMessage() {
+    alert(`Buy this course for $500`)
+  }
+
+  function secondMessage() {
+    alert(`This is not a scam`)
+  }
+  function thirdMessage() {
+    alert(`This is deffo not a scam`)
+  }
+
+
+  let timer1 = setTimeout(firstMessage, 3000);
+  let timer2 = setTimeout(secondMessage, 5000);
+  let timer3 = setTimeout(thirdMessage, 7000);
+
+  document.getElementById('my-btn').onclick = function () {
+    clearTimeout(timer1)
+    clearTimeout(timer2)
+    clearTimeout(timer3)
+    alert('Thanks for buying')
+  }
+
+
+};
+
+function clock() {
+
+
+
+  const myLabel = document.getElementById('my-label');
+
+  update()
+  setInterval(update, 1000);
+
+  function update() {
+    let date = new Date()
+    myLabel.innerHTML = formatTime(date);
+
+    function formatTime() {
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+      let amOrPm = hours >= 12 ? 'pm': 'am';
+      hours = ( hours % 12 ) || 12
+
+      hours = formatZeroes(hours);
+      minutes = formatZeroes(minutes);
+      seconds = formatZeroes(seconds);
+
+      return `${hours}:${minutes}:${seconds} ${amOrPm}`
+    }
+
+    function formatZeroes(time) {
+      time = time.toString();
+      return time.length < 2 ? '0' + time : time
+    }
+  }
+};
+
+function promiseExample() {
+
+  //start
+  console.time('response time')
+  // alert('clik the ok button')
+  // start end
+  console.timeEnd('response time')
+
+  const promise = new Promise((resolve, reject) =>{
+    let fileLoaded = false;
+
+    if (fileLoaded){
+      resolve('File loaded')
+    }else {
+      reject('File not loaded')
+    }
+  })
+
+  promise.then((res)=>{
+      console.log(res);
+    })
+    .catch(err =>{
+      console.log(err);
+    });
+
+
+  const prom = time => new Promise(resolve =>{
+    setTimeout(resolve, time);
+  })
+
+  prom(3000).then(()=>{
+    console.log('Ta');
+  })
 }
 
-class Rabbit extends Animal {
+function asyncAwait() {
 
-  constructor (name,age){
-    super(name)
-    this._age = age
-    this._energy = 100
+  async function loadFile() {
+    let fileLoaded = false;
+
+    if (fileLoaded){
+      return 'File Loaded'
+    }else {
+      throw 'File not loaded'
+    }
   }
 
-  get age(){
-    return `${this._age} years old`
+  // loadFile().then(val =>{
+  //   console.log(val);
+  // }).catch(err=>{
+  //   console.log(err);
+  // })
+
+  async function startProgress() {
+    try {
+      let message = await loadFile()
+      console.log(message);
+    }catch(err) {
+      console.log(err);
+    }
   }
-  run(){
-    return `This ${this.name} is running and he is only ${this.age}`
-  }
+
+  startProgress()
 }
 
-const rabbit1 = new Rabbit('zoomba', '2');
-console.log(rabbit1.run());
-console.log(rabbit1);
+function domFruits(params) {
+
+  const fruits = document.getElementsByName('fruits')
+  console.log(fruits);
+
+  fruits.forEach(val =>{
+    console.log(val.value);
+  })
+
+
+  let veggies = document.getElementsByTagName('li')
+  console.log(veggies);
+
+
+  let desserts = document.getElementsByClassName('desserts')
+  console.log(desserts);
+}
+
