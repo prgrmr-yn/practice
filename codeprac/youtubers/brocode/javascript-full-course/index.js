@@ -875,5 +875,120 @@ function domFruits(params) {
 
   let desserts = document.getElementsByClassName('desserts')
   console.log(desserts);
+
+  const innerDiv = document.getElementById('inner-div')
+  const outerDiv = document.getElementById('outer-div')
+  console.log(innerDiv);
+  console.log(outerDiv);
+
+  innerDiv.addEventListener('click', changeRed);
+  outerDiv.addEventListener('click', changeRed);
+
+  function changeRed() {
+    console.dir(this);
+    console.log(this.id);
+    this.style.backgroundColor = 'red';
+  }
+
+  function changeGreen() {
+    this.style.backgroundColor = 'lightgreen'
+
+    function doSomething() {
+        alert('you click me')
+      }
+
+    const mytext = document.getElementById('my-text');
+    const el = document.getElementById('my-div')
+
+    mytext.onchange = doSomething
+  }
 }
 
+function canvas() {
+
+
+
+let canvas = document.getElementById('my-canvas');
+console.log(canvas);
+
+let context = canvas.getContext('2d');
+context.beginPath()
+
+// context.lineWidth = 10;
+// context.moveTo(0, 0);
+// context.lineTo(250, 250);
+// context.lineTo(250, 500);
+// context.stroke();
+
+
+context.beginPath();
+
+context.strokeStyle = 'blue'
+context.fillStyle = 'lightblue'
+context.moveTo(250, 0)
+context.lineTo(0, 495)
+context.lineTo(500, 495 )
+context.lineTo(250, 0)
+context.moveTo(500, 495)
+context.lineTo(0, 150)
+context.lineTo(500, 150)
+context.lineTo(0, 495);
+context.fill();
+
+context.stroke();
+
+}
+
+// document.cookie = "firstName=SpongeBob; expires=Sun, 1 January 2024 12:00:00 UTC; path=/"
+console.log(navigator.cookieEnabled);
+
+
+
+function setCookie(name, value, daysToLive) {
+  const date = new Date();
+  date.setTime(date.getTime() + daysToLive * 24 * 60 * 60 * 1000 )
+  let expires = `expires = ${date.toUTCString()}`;
+  document.cookie = `${name}=${value}; ${expires}; path=/`
+}
+
+function deleteCookie(name) {
+  setCookie(name, null, null)
+}
+
+setCookie('email', 'yyy@y.com', 5);
+// deleteCookie('email')
+console.log(document.cookie);
+
+function getCookie(name) {
+  const cDecoded = decodeURIComponent(document.cookie)
+  const cArray = cDecoded.split('; ')
+  console.log(cArray);
+  let result = null;
+
+  cArray.forEach(e => {
+    if (e.startsWith(name)){
+      result = e.substring(e.indexOf('=') + 1)
+    }
+
+  })
+  return result;
+}
+
+
+const firstName = document.getElementById('first-name')
+const lastName = document.getElementById('last-name')
+const submitButton = document.getElementById('submit-button')
+const cookieButton = document.getElementById('cookie-button')
+
+submitButton.addEventListener('click', ()=>{
+  setCookie("firstName", firstName.value, 5)
+  setCookie("lastName", lastName.value, 5)
+})
+
+cookieButton.addEventListener('click', () => {
+  firstName.value = getCookie('firstName')
+  lastName.value = getCookie('lastName')
+})
+
+
+document.getElementById('user').textContent = "Hi " + (getCookie('firstName') || 'user')

@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+#container-work {
+  border: 1px solid black;
+  width: 900px;
+  height: 1300px;
+}
+
+#container-work > .forklift-driver {
+  height: 100px;
+  border: 1px solid black;
+}
+#container-work > .forklift-driver > .boxes {
+  height: 50px;
+  /* border: 1px solid black; */
+}
+#container-work > .forklift-driver > .boxes > .inner-boxes {
+  width: 220px;
+  height: 50px;
+  border: 1px solid black;
+  /* border-right: 2px solid black; */
+}
+
+#container-work > .forklift-driver > .boxes > .inner-boxes > #forky {
+  color: black;
+  margin: 8px 10px;
+}
+
+#container-work > .divs {
+  height: 300px;
+  border: 1px solid black;
+}
+
+#container-work > .divs {
+  display: flex;
+}
+
+#container-work > .divs > .section1 {
+  border: 1px solid black;
+  height: 300px;
+  width: 220px;
+}
+
+#container-work > .divs > .section1 > .inner-sec1{
+  width: 220px;
+  border-bottom: 2px solid black;
+  height: 75px;
+}
+
+#container-work > .divs > .section2 {
+  /* border: 1px solid blue; */
+  width: 680px;
+}
+
+#container-work > .divs > .section2 > .inner-sections {
+  border: 1px solid grey;
+  height: 75px;
+
+}
